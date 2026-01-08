@@ -28,7 +28,7 @@ Examples:
         dl-basic https://pypi.org/simple/six/ --flat --output-dirpath ~/downloads/six
 
 Updates:
-    2026-01-07 - tools.downloaders.basic - initial commit
+    2026-01-07 - tools.downloaders.basic - initial commit, FEATURE: dl-basic
 '''
 
 # stdlib imports
