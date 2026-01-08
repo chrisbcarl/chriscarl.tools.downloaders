@@ -1,7 +1,7 @@
 [project]
 name = "chriscarl.tools.downloaders"
 version = "0.0.0"
-description = ""
+description = "Tools that download--bundles `chriscarl.python`."
 authors = [{name = "Chris Carl", email = "chrisbcarl@outlook.com"}]
 readme = "README.md"
 classifiers = [
