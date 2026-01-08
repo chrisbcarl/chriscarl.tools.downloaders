@@ -47,6 +47,7 @@
     // python
     "python-envs.defaultEnvManager": "ms-python.python:system",
     "python-envs.pythonProjects": [],
+    "python.analysis.typeCheckingMode": "basic",
     "python.analysis.supportDocstringTemplate": false,
     "python.useEnvironmentsExtension": false,
     "python.terminal.activateEnvironment": true,

@@ -9,7 +9,8 @@
             "type": "debugpy",
             "request": "launch",
             "program": "${file}",
-            "console": "integratedTerminal"
+            "console": "integratedTerminal",
+            "justMyCode": false,
         },
         {
             // https://stackoverflow.com/questions/61701704/vs-code-c-debugging
@@ -33,6 +34,26 @@
                 }
             ],
             "preLaunchTask": "C/C++: g++ build active file",
+        },
+        {
+            "name": "[tools] - dl-basic",
+            "type": "debugpy",
+            "request": "launch",
+            "program": "${workspaceFolder}/src/chriscarl/tools/downloaders/basic.py",
+            "console": "integratedTerminal",
+            "justMyCode": false,
+            "args": [
+                // "https://codex.cs.yale.edu/avi/os-book",
+                // "https://www.marxists.org/archive/marx/works/download/index.htm",
+                // "https://pr.princeton.edu/home/05/",
+                // "https://archive.org/download/constitution00unit/constitution00unit_djvu.txt",
+                // "https://upload.wikimedia.org/wikipedia/commons/thumb/e/ec/Mona_Lisa%2C_by_Leonardo_da_Vinci%2C_from_C2RMF_retouched.jpg/960px-Mona_Lisa%2C_by_Leonardo_da_Vinci%2C_from_C2RMF_retouched.jpg",
+                "https://tgftp.nws.noaa.gov/data/forecasts/area/", "--skip-sleep",
+                "--recurse",
+                // "--flat", "--skip-sleep",
+                "--output-dirpath", "/temp/dl-basic",
+                "--log-level", "DEBUG",
+            ]
         },
     ]
 }
