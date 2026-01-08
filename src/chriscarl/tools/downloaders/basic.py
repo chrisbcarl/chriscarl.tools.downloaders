@@ -9,6 +9,10 @@ Description:
 tools.downloaders.basic is a tool which you can point it to a URL and it does basic scraping for anything that looks like a file
 
 Examples:
+    # individual files by url, probably most common usage
+        dl-basic https://archive.org/download/constitution00unit/constitution00unit_djvu.txt `
+            https://upload.wikimedia.org/wikipedia/commons/thumb/e/ec/Mona_Lisa%2C_by_Leonardo_da_Vinci%2C_from_C2RMF_retouched.jpg/960px-Mona_Lisa%2C_by_Leonardo_da_Vinci%2C_from_C2RMF_retouched.jpg
+
     # scan a website for links, grab them up
         dl-basic https://www.marxists.org/archive/marx/works/download/index.htm
 
