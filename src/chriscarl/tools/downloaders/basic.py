@@ -32,7 +32,7 @@ Examples:
         dl-basic https://pypi.org/simple/six/ --flat --output-dirpath ~/downloads/six
 
 Updates:
-    2026-01-07 - tools.downloaders.basic - initial commit, FEATURE: dl-basic
+    2026-01-07 - tools.downloaders.basic - initial commit, # FEATURE: tool-dl-basic
 '''
 
 # stdlib imports
@@ -75,7 +75,6 @@ DEFAULT_LOG_FILEPATH = abspath(TEMP_DIRPATH, 'tools.downloaders.basic.log')
 
 # tool constants
 EMAIL_REGEX = re.compile(r'([a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]{2,4})')  # https://emailregex.com/#google_vignette
-
 
 
 def url_walk_files_and_links(url, is_a='link', skip_sleep=False, bidirectional=False, skip_page=False):
@@ -189,8 +188,8 @@ class Arguments:
     bidirectional: bool = False
     flat: bool = False
     skip_exist: bool = False
-    skip_sleep: bool =False
-    skip_page: bool =False
+    skip_sleep: bool = False
+    skip_page: bool = False
     debug: bool = False
     log_level: str = 'INFO'
     log_filepath: str = DEFAULT_LOG_FILEPATH
@@ -231,17 +230,7 @@ class Arguments:
         return arguments
 
 
-def basic(
-    urls,
-    output_dirpath=DEFAULT_OUTPUT_DIRPATH,
-    recurse=False,
-    bidirectional=False,
-    flat=False,
-    skip_exist=False,
-    skip_sleep=False,
-    skip_page=False,
-    **kwargs
-):
+def basic(urls, output_dirpath=DEFAULT_OUTPUT_DIRPATH, recurse=False, bidirectional=False, flat=False, skip_exist=False, skip_sleep=False, skip_page=False, **kwargs):
     # type: (List[str], str, bool, bool, bool, bool, bool, bool, dict) -> None
     batch_urls = []
     for u, url in enumerate(urls):
