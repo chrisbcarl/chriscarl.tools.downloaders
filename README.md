@@ -2,6 +2,15 @@
 Tools that download--bundles `chriscarl.python`.
 
 
+# Setup
+```bash
+poetry install --all-extras
+stubgen -o dist/typing --no-analysis src
+# for other projects (like this one)
+stubgen -o dist/typing/chriscarl --no-analysis ../chriscarl.python/src
+```
+
+
 # Features
 |version    |author     |deployed   |created    |feature-name                           |description                                            |
 |---        | ---       | ---       | ---       | ---                                   | ---                                                   |

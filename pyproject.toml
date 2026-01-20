@@ -12,6 +12,52 @@ classifiers = [
 requires-python = ">=3.12,<3.14"
 
 
+[build-system]
+requires = ["poetry-core>=2.0.0,<3.0.0"]
+build-backend = "poetry.core.masonry.api"
+
+
+[tool.chriscarl]
+codeword = 'spider'
+created = ''
+modified = ''
+
+
+[tool.pyright]
+include = ["src", "tests"]
+exclude = [
+    "**/node_modules",
+    "**/__pycache__"
+]
+ignore = ["ignoreme"]
+stubPath = "dist/stubs"
+# defineConstant = { DEBUG = true }
+reportAttributeAccessIssue = false  # ._MEIPASS
+
+
+[tool.pytest.ini_options]
+testpaths = [
+    "tests",
+]
+addopts = [
+    # https://docs.pytest.org/en/latest/explanation/goodpractices.html#test-discovery
+    # https://docs.pytest.org/en/latest/explanation/goodpractices.html#which-import-mode
+    # allows you to have 2 test file names that are exaclty the same like a/test_lib.py and b/test_lib.py
+    "--import-mode=importlib",
+]
+
+
+[tool.mypy]
+mypy_path = "$MYPY_CONFIG_FILE_DIR/dist/typing"
+
+
+[[tool.mypy.overrides]]
+module = [
+    'parameterized',
+]
+ignore_missing_imports = true
+
+
 [tool.poetry]
 package-mode = true
 packages = [
@@ -52,8 +98,3 @@ types-six = "^1.16.21.20241105"
 pytest-cov = "^6.0.0"
 gitpython = "^3.1.43"
 mypy = "^1.19.1"
-
-
-[build-system]
-requires = ["poetry-core>=2.0.0,<3.0.0"]
-build-backend = "poetry.core.masonry.api"
