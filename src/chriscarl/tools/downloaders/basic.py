@@ -32,6 +32,7 @@ Examples:
         dl-basic https://pypi.org/simple/six/ --flat --output-dirpath ~/downloads/six
 
 Updates:
+    2026-01-26 - tools.downloaders.basic - if in the process of walking, we should catch obviously BAD urls like ones with illegal chars
     2026-01-07 - tools.downloaders.basic - initial commit, # FEATURE: tool-dl-basic
 '''
 
@@ -41,6 +42,7 @@ import os
 import sys
 import logging
 import re
+import http.client
 import urllib.error
 from urllib.parse import urljoin, urlparse
 from typing import List, Tuple, Generator, Optional
@@ -91,7 +93,7 @@ def url_walk_files_and_links(url, is_a='link', skip_sleep=False, bidirectional=F
         downloaded_filepath, url = download(url, '/temp', is_a=is_a, skip_exist=False, skip_sleep=skip_sleep)
         if url != original_url:
             LOGGER.debug('requested %s changed to %s on download...', original_url, url)
-    except urllib.error.HTTPError:
+    except (urllib.error.HTTPError, http.client.InvalidURL):  # 403 or "https://aima.cs.berkeley.edu/%%<<<upgrade figure]] "
         LOGGER.warning('download failed on %s', url)
         LOGGER.debug('download failed on %s', url, exc_info=True)
         return file_urls, link_urls
