@@ -27,10 +27,8 @@ from typing import List, Tuple, Generator, Optional
 
 # project imports
 from chriscarl.core.constants import TEMP_DIRPATH
-from chriscarl.core.lib.stdlib.logging import NAME_TO_LEVEL, configure_ez, DEFAULT_LOG_LEVEL
-from chriscarl.core.lib.stdlib.argparse import ArgparseNiceFormat
-from chriscarl.core.lib.stdlib.os import abspath, make_dirpath
-from chriscarl.core.lib.stdlib.urllib import WEB_FILENAME_EXTENSIONS, download, download_pool, get_basename
+from chriscarl.core.lib.stdlib.os import abspath
+from chriscarl.core.lib.stdlib.urllib import WEB_FILENAME_EXTENSIONS, download, download_pool
 from chriscarl.core.functors.parse.html import html_to_dom
 
 SCRIPT_RELPATH = 'chriscarl/tools/shed/downloaders/basic.py'

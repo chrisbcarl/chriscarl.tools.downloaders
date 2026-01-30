@@ -84,6 +84,9 @@ dl-basic = 'chriscarl.tools.downloaders.basic:main'
 
 [tool.poetry.dependencies]
 chriscarl = {develop = true, path="../chriscarl.python"}  # version = ">0.0.0"
+chriscarl-python-web = {path = "../chriscarl.python.web", develop = true}
+requests = "^2.32.5"
+brotli = "^1.2.0"
 
 
 [tool.poetry.group.test.dependencies]

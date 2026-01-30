@@ -32,6 +32,7 @@ Examples:
         dl-basic https://pypi.org/simple/six/ --flat --output-dirpath ~/downloads/six
 
 Updates:
+    2026-01-26 - tools.downloaders.basic - if in the process of walking, we should catch obviously BAD urls like ones with illegal chars
     2026-01-19 - tools.downloaders.basic - re-orged into the shed
     2026-01-07 - tools.downloaders.basic - initial commit, # FEATURE: tool-dl-basic
 '''
@@ -42,6 +43,7 @@ import os
 import sys
 import logging
 import re
+import http.client
 import urllib.error
 from urllib.parse import urljoin, urlparse
 from typing import List, Tuple, Generator, Optional
